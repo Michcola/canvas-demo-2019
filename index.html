@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<body>
-  <canvas id="xxx" width=300 height=300></canvas>
-  <div id=actions class="actions">
-    <button id=eraser>橡皮擦</button>
-    <button id=brush>画笔</button>
-  </div>
-  <script src="./main.js"></script>
-</body>
-</html>
 
+<body>
+    <canvas id="xxx" width=300 height=300></canvas>
+    <div id=actions class="actions">
+        <svg id="pen" class="active icon" aria-hidden="true">
+            <use xlink:href="#icon-pen2"></use>
+        </svg>
+        <svg id="eraser" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-eraser1"></use>
+        </svg>
+        <svg id="clear" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-clear"></use>
+        </svg>
+        <svg id="save" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-save"></use>
+        </svg>
+    </div>
+    <ol class="colors">
+        <li id="red" class="red active"></li>
+        <li id="green" class="green"></li>
+        <li id="blue" class="blue"></li>
+    </ol>
+    <ol class="sizes">
+        <li id="thin" class="thin"></li>
+        <li id="thick" class="thick"></li>
+    </ol>
+    <script src="./main.js"></script>
+    <script src="//at.alicdn.com/t/font_1086716_7s200ag8wb6.js
+    "></script>
+</body>
+
+</html>
