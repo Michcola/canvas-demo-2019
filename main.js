@@ -20,13 +20,21 @@ eraser.onclick = function () {
     pen.classList.remove('active')
 
 }
+black.onclick = function(){
+    context.fillStyle = 'black'
+    context.strokeStyle = 'black'
+    black.classList.add('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+    red.classList.remove('active')
+}
 red.onclick = function(){
     context.fillStyle = 'red'
     context.strokeStyle = 'red'
     red.classList.add('active')
     green.classList.remove('active')
     blue.classList.remove('active')
-
+    black.classList.remove('active')
 }
 green.onclick = function(){
     context.fillStyle = 'green'
@@ -34,6 +42,8 @@ green.onclick = function(){
     green.classList.add('active')
     red.classList.remove('active')
     blue.classList.remove('active')
+    black.classList.remove('active')
+
 }
 blue.onclick = function(){
     context.fillStyle = 'blue'
@@ -41,13 +51,38 @@ blue.onclick = function(){
     blue.classList.add('active')
     green.classList.remove('active')
     red.classList.remove('active')
+    black.classList.remove('active')
+
 }
 
 thin.onclick = function(){
     lineWidth = 5
+    thin.classList.add('active')
+    thick.classList.remove('active')
+    thickM.classList.remove('active')
+    thickL.classList.remove('active')
+
 }
 thick.onclick = function(){
     lineWidth = 10
+    thick.classList.add('active')
+    thin.classList.remove('active')
+    thickM.classList.remove('active')
+    thickL.classList.remove('active')
+}
+thickM.onclick = function(){
+    lineWidth = 15
+    thickM.classList.add('active')
+    thick.classList.remove('active')
+    thin.classList.remove('active')
+    thickL.classList.remove('active')
+}
+thickL.onclick = function(){
+    lineWidth = 19
+    thickL.classList.add('active')
+    thick.classList.remove('active')
+    thickM.classList.remove('active')
+    thin.classList.remove('active')
 }
 clear.onclick = function(){
     context.clearRect(0,0,yyy.width,yyy.height);
@@ -111,7 +146,7 @@ function listenToMouse(canvas) {
             console.log(x,y)
             using = true
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10)
+                context.clearRect(x - 10, y - 10, 20, 20)
             } else {
                 lastPoint = {
                     "x": x,
@@ -128,7 +163,7 @@ function listenToMouse(canvas) {
             if (!using) { return }
 
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10)
+                context.clearRect(x - 10, y - 10, 20, 20)
             } else {
                 var newPoint = {
                     "x": x,
@@ -151,7 +186,7 @@ function listenToMouse(canvas) {
             var y = aaa.clientY
             using = true
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10)
+                context.clearRect(x - 10, y - 10, 20, 20)
             } else {
                 lastPoint = {
                     "x": x,
@@ -166,7 +201,7 @@ function listenToMouse(canvas) {
             if (!using) { return }
 
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10)
+                context.clearRect(x - 10, y - 10, 20, 20)
             } else {
                 var newPoint = {
                     "x": x,
