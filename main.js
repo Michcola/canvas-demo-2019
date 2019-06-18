@@ -1,10 +1,10 @@
-var yyy = document.getElementById('xxx');
-var context = yyy.getContext('2d');
+var canvas = document.getElementById('xxx');
+var context = canvas.getContext('2d');
 var lineWidth = 5
 
-autoSetCanvasSize(yyy)
+autoSetCanvasSize(canvas)
 
-listenToMouse(yyy)
+listenToMouse(canvas)
 
 
 var eraserEnabled = false
@@ -85,10 +85,10 @@ thickL.onclick = function(){
     thin.classList.remove('active')
 }
 clear.onclick = function(){
-    context.clearRect(0,0,yyy.width,yyy.height);
+    context.clearRect(0,0,canvas.width,canvas.height);
 }
 save.onclick = function(){
-    var url = yyy.toDataURL("image/png")
+    var url = canvas.toDataURL("image/png")
     var a = document.createElement('a')
     document.body.appendChild(a)
     a.href = url
@@ -169,6 +169,7 @@ function listenToMouse(canvas) {
                     "x": x,
                     "y": y
                 }
+                drawCircle(x, y, lineWidth / 2)
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
                 lastPoint = newPoint
             }
@@ -207,6 +208,7 @@ function listenToMouse(canvas) {
                     "x": x,
                     "y": y
                 }
+                drawCircle(x, y, lineWidth / 2)
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
                 lastPoint = newPoint
             }
